@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AED WORLD TOUR</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Baloo+2&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Baloo 2', cursive;
+      background: radial-gradient(circle at top left, #ff4ecb, #8a2be2, #1b003a);
+      color: white;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: rgba(0,0,0,0.6);
+      padding: 2rem;
+      box-shadow: 0 0 30px rgba(255, 105, 180, 0.5);
+      position: relative;
+    }
+
+    .fk-unusa {
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      font-size: 1.5rem;
+      color: #ffb6e9;
+      font-weight: bold;
+      text-shadow: 0 0 5px #fff;
+    }
+
+    h1 {
+      font-size: 3rem;
+      text-shadow: 0 0 10px #fff, 0 0 20px #ff69b4;
+    }
+
+    .subtext {
+      font-size: 1.2rem;
+      color: #ffb6e9;
+      margin-top: -1rem;
+    }
+
+    .nav-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 2rem 0;
+    }
+
+    .nav-buttons button {
+      background: linear-gradient(135deg, #ff69b4, #ff1493);
+      color: white;
+      border: none;
+      padding: 1rem 3rem;
+      margin: 1rem;
+      border-radius: 50px;
+      font-size: 1.5rem;
+      box-shadow: 0 0 20px #ff1493;
+      cursor: pointer;
+      transition: all 0.4s ease;
+    }
+
+    .nav-buttons button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 30px #ff69b4;
+    }
+
+    .page {
+      display: none;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      padding: 2rem;
+    }
+
+    .active {
+      display: block;
+      opacity: 1;
+    }
+
+    .card {
+      background: rgba(0,0,0,0.6);
+      padding: 2rem;
+      margin: 2rem auto;
+      border-radius: 20px;
+      width: 85%;
+      max-width: 800px;
+      box-shadow: 0 0 30px rgba(255,105,180,0.5);
+    }
+
+    .aed-simulator {
+      background: #222;
+      margin: 2rem auto;
+      padding: 2rem;
+      border-radius: 20px;
+      width: 320px;
+      position: relative;
+    }
+
+    .screen {
+      background: #000;
+      color: #0f0;
+      font-family: monospace;
+      font-size: 1.1rem;
+      padding: 1rem;
+      border: 2px solid #0f0;
+      border-radius: 10px;
+      height: 100px;
+      margin-bottom: 1rem;
+    }
+
+    .aed-button {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: none;
+      font-size: 1.2rem;
+      color: white;
+      cursor: pointer;
+      margin: 10px;
+      box-shadow: 0 0 10px #000;
+      transition: 0.3s;
+    }
+
+    .power { background: green; }
+    .shock { background: red; }
+
+    .aed-button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px white;
+    }
+
+    .torso {
+      width: 200px;
+      height: 300px;
+      background: #888;
+      margin: 20px auto;
+      position: relative;
+      border-radius: 20px;
+    }
+
+    .pad {
+      width: 60px;
+      height: 80px;
+      background: #fff;
+      border: 2px solid #333;
+      position: absolute;
+      display: none;
+    }
+
+    .pad.left {
+      top: 50px;
+      left: 20px;
+    }
+
+    .pad.right {
+      bottom: 30px;
+      right: 20px;
+    }
+
+    ol {
+      padding-left: 1.2em;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="fk-unusa">FK UNUSA</div>
+    <h1>🫀 AED WORLD TOUR 🫀</h1>
+    <div class="subtext">Project Keterampilan Klinis</div>
+    <p>Mari belajar menyelamatkan nyawa dengan cara yang menyenangkan!</p>
+  </header>
+
+  <div class="nav-buttons">
+    <button onclick="showPage('pengertian')">📖 Pengertian AED</button>
+    <button onclick="showPage('pengguna')">👥 Siapa Saja yang Boleh Menggunakan</button>
+    <button onclick="showPage('tutorial')">🫀 Cara Menggunakan</button>
+    <button onclick="showPage('simulasi')">🎮 Simulasi</button>
+    <button onclick="showPage('lokasi')">📍 Temukan AED</button>
+  </div>
+
+  <div class="page active" id="pengertian">
+    <div class="card">
+      <h2>📖 Apa Itu AED?</h2>
+      <p>AED (Automated External Defibrillator) adalah alat elektronik portabel yang digunakan untuk membantu orang yang mengalami henti jantung mendadak. Alat ini dapat menganalisis irama jantung dan memberikan kejutan listrik apabila dibutuhkan, untuk mengembalikan irama jantung ke kondisi normal.</p>
+    </div>
+  </div>
+
+  <div class="page" id="pengguna">
+    <div class="card">
+      <h2>👥 Siapa Saja yang Boleh Menggunakan AED?</h2>
+      <p>✅ Tenaga medis</p>
+      <p>✅ Petugas keamanan</p>
+      <p>✅ Guru</p>
+      <p>✅ Karyawan kantor</p>
+      <p>✅ Mahasiswa</p>
+      <p>✅ Siapapun dapat menggunakan AED</p>
+      <p>AED dirancang agar mudah digunakan dan hanya akan memberikan kejutan listrik jika diperlukan sehingga tidak akan membahayakan jantung yang sehat.</p>
+    </div>
+  </div>
+
+  <div class="page" id="tutorial">
+    <div class="card">
+      <h2>🫀 Cara Menggunakan AED</h2>
+      <ol>
+        <li>Pastikan situasi aman untuk Anda dan korban.</li>
+        <li>Segera panggil ambulance, lalu nyalakan alat AED.</li>
+        <li>Tempelkan pad elektroda ke dada korban mengikuti petunjuk.</li>
+        <li>Biarkan AED menganalisa irama jantung.</li>
+        <li>Tekan tombol kejut jika diperintahkan.</li>
+        <li>Lanjutkan CPR setelah kejut bila dibutuhkan.</li>
+      </ol>
+      <div style="margin-top:1rem; font-size:1.3rem; color:yellow;">
+        💡 Ikuti instruksi dari AED
+      </div>
+    </div>
+  </div>
+
+  <div class="page" id="simulasi">
+    <div class="card">
+      <h2>🎮 Simulasi AED Realistis</h2>
+      <div class="aed-simulator">
+        <div class="screen" id="simScreen">Tekan tombol POWER</div>
+        <button class="aed-button power" onclick="powerOn()">POWER</button>
+        <button class="aed-button shock" onclick="giveShock()">SHOCK</button>
+        <div class="torso">
+          <div class="pad left" id="padLeft"></div>
+          <div class="pad right" id="padRight"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page" id="lokasi">
+    <div class="card">
+      <h2>📍 Temukan AED di Sekitar Anda</h2>
+      <form onsubmit="tambahLokasi(event)">
+        <input type="text" id="inputLokasi" placeholder="Contoh: Mall Surabaya - Lantai 1" required>
+        <br>
+        <button type="submit">Submit Lokasi</button>
+      </form>
+      <div id="daftarLokasi">
+        <h3>Daftar Lokasi:</h3>
+        <ul id="listLokasi"></ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showPage(pageId) {
+      document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+      document.getElementById(pageId).classList.add('active');
+    }
+
+    let powered = false;
+    let padApplied = false;
+    let readyToShock = false;
+
+    function powerOn() {
+      if (!powered) {
+        powered = true;
+        document.getElementById('simScreen').innerText = "Silakan tempelkan pad ke dada korban";
+        setTimeout(() => {
+          document.getElementById('padLeft').style.display = 'block';
+          document.getElementById('padRight').style.display = 'block';
+          padApplied = true;
+          setTimeout(analyze, 2000);
+        }, 1000);
+      }
+    }
+
+    function analyze() {
+      document.getElementById('simScreen').innerText = "Menganalisa irama jantung...";
+      setTimeout(() => {
+        document.getElementById('simScreen').innerText = "Irama gawat. Siapkan kejut.";
+        readyToShock = true;
+      }, 2000);
+    }
+
+    function giveShock() {
+      if (powered && readyToShock) {
+        document.getElementById('simScreen').innerText = "KEJUTAN DIBERIKAN.\nCek respon pasien.\nBerikan CPR jika dibutuhkan.";
+      } else {
+        alert("Belum siap untuk kejut!");
+      }
+    }
+
+    function tambahLokasi(e) {
+      e.preventDefault();
+      const input = document.getElementById('inputLokasi');
+      const list = document.getElementById('listLokasi');
+      const newItem = document.createElement('li');
+      newItem.innerText = input.value;
+      list.appendChild(newItem);
+      input.value = '';
+    }
+  </script>
+</body>
+</html>
